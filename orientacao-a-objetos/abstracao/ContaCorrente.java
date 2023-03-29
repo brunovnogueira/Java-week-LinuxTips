@@ -1,5 +1,14 @@
 
 class ContaCorrente implements Conta {
+    private String nome;
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 
     @Override
     public void consultarSaldo() {
@@ -11,4 +20,9 @@ class ContaCorrente implements Conta {
         System.out.println("digite o valor que voce deseja transferir");
 
     }
+
+    public ContaCorrente(String nome) {
+        this.nome = nome;
+    }
+
 }

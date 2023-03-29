@@ -28,4 +28,20 @@ public class Profissional {
         return "trabalhando private ";
 
     }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public Integer getId() {
+        return id;
+    }
 }
