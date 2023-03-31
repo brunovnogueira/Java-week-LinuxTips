@@ -25,3 +25,23 @@ Uma classe (subclasse) herda os atributos e métodos de outra (superclasse). Nes
 **Polimorfismo**
 
 Uma mesma coisa tem várias formas. Um mesmo método pode ser aplicado de formas diferentes. Temos o polimorfismo de sobrecarga, onde existem vários métodos de mesmo nome e podemos ter variações na quantidade de parâmetros e/ou retorno. Na hora de chamarmos o método, dependendo da quantidade de parâmetros que passarmos, o programa irá entender qual implementação fazer. O polimorfismo de sobrescrita é quando a assinatura do método (retorno e parâmetros) se mantem, mas a implementação é alterada. Esse segundo polimorfismo ocorre nos casos de herança, onde mudaremos a implementação de um método na subclasse.
+
+## Day 3
+
+**CRUD**
+
+Acrônimo para Create, Read, Update e Delete. Cada uma dessas são ações que podemos performar sob os dados. Podemos criar, ler, atualizar e excluir dados do nosso banco.
+
+**API**
+
+"Aplication Programming Interface" é basicamente um intermediário que permite que duas aplicações se comuniquem ou, também, que uma aplicação troque informações com o servidor/banco de dados. Podemos criar uma aplicação que irá consumir uma API do Spotify para pegar todas as músicas cadastradas no banco deles, por exemplo.
+
+>[Tipos de API](https://www.techtarget.com/searchapparchitecture/tip/What-are-the-types-of-APIs-and-their-differences)
+
+<u>Classe Modelo/Entity:</u> é a classe que simboliza uma tabela do banco.
+
+<u>Classe Repository:</u> interface entre a tabela e o banco de dados. Métodos de querys já pré prontos (save, listAll, delete).
+
+<u>Classe service:</u> onde fica a nossa regra de negócio, nossa implementação.
+
+<u>Classe controller:</u> onde ficam os endpoints, onde recebemos e retornamos os dados pro client.
