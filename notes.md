@@ -45,3 +45,18 @@ Acrônimo para Create, Read, Update e Delete. Cada uma dessas são ações que p
 <u>Classe service:</u> onde fica a nossa regra de negócio, nossa implementação.
 
 <u>Classe controller:</u> onde ficam os endpoints, onde recebemos e retornamos os dados pro client.
+
+## Day 4
+
+```java
+public ResponseEntity<Object> deletePorId(Long id){
+        return cursoRepository.findById(id)
+        .map(cursoParaDeletar -> {
+        cursoRepository.delete(curspParaDeletar);
+        return ResponseEntity.noContent().build();
+        })
+        .orElse(ResponseEntity.notFound().build());
+        }
+```
+
+Nesse exemplo usamos como retorno o `ResponseEntity<Object>` já que não vamos retornar nada no Response Body, somente estamos especificando o status code que será mostrado. Caso fossemos retornar a entidade `Curso` que foi deletada, usaríamos `ResponseEntity<Curso>`.

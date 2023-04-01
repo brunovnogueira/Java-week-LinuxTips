@@ -3,6 +3,7 @@ package com.linuxtips.javaweekapiredo.controller;
 import com.linuxtips.javaweekapiredo.model.Curso;
 import com.linuxtips.javaweekapiredo.service.CursoService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,5 +26,23 @@ public class CursoController {
     @ResponseStatus(HttpStatus.OK)
     public List<Curso> listarCursos(){
         return cursoService.listarCursos();
+    }
+
+    @GetMapping("/cursos/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Curso> listarCursosPorId(@PathVariable Long id){
+        return cursoService.listarCursoPorId(id);
+    }
+
+    @PutMapping("/cursos/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Curso> atualizarCursoPorId(@PathVariable Long id, @RequestBody Curso curso){
+        return cursoService.atualizarCursoPorId(id, curso);
+    }
+
+    @DeleteMapping("/cursos/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Object> deletarCursoPorId(@PathVariable Long id){
+        return cursoService.deletePorId(id);
     }
 }
